@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  # Контейнер с Node.js
+  app:
+    build:
+      context: ./app
+      target: dev
+    tty: true
+    working_dir: /opt/server
+    volumes:
+      - ./app:/opt/server
+      - ./static:/opt/static
+    env_file:
+      - .env
+    expose:
+      - '3000'
