@@ -14,4 +14,18 @@ services:
     env_file:
       - .env
     expose:
+      - '8080'
+  front:
+    build:
+      context: ./app
+      target: dev
+    tty: true
+    working_dir: /opt/front
+    volumes:
+      - ./front:/opt/front
+    env_file:
+      - .env
+    expose:
       - '3000'
+    depends_on:
+      - app
