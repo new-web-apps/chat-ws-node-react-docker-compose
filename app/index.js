@@ -17,6 +17,7 @@ function sendMessage (message) {
 }
 
 server.on('connection', (ws) => {
+    console.log('connected')
     const userRef = {
         ws,
     };
