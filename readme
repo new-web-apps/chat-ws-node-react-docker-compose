@@ -1,0 +1,14 @@
+ws chat
+in docker compose
+app - ws server (Node.js)
+front - SPA React
+
+more detail in tutorial
+https://dev.to/koladev/websocket-with-react-nodejs-and-docker-building-a-chat-application-3447
+
+start app
+    sudo docker compose up --build -d
+
+access into container
+    sudo docker compose exec app sh
+    sudo docker compose exec front sh
