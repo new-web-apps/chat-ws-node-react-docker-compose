@@ -15,6 +15,7 @@ function ChatPage() {
   // sending message function
 
   const sendMessage = () => {
+    console.log('sendMessage')
     if (messageBody) {
       ws.current.send(
         JSON.stringify({
@@ -28,11 +29,10 @@ function ChatPage() {
 
   React.useEffect(() => {
     try {
-      ws.current = new WebSocket("ws://10.3.0.3:8080");
+      ws.current = new WebSocket("ws://localhost:8081");
     } catch (e) {
       console.log(e)
     }
-    return;
     
     ws.current.onopen = () => {
       console.log("Connection opened");
